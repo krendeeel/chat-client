@@ -1,0 +1,232 @@
+.main__chatcontent {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 20px;
+    max-width: calc(100% - 260px);
+    height: calc(100vh - 60px);
+}
+
+.content__header {
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ebe7fb;
+}
+.current-chatting-room {
+    display: flex;
+    align-items: center;
+}
+.current-chatting-room p {
+    color: #8b00ff;
+    margin: 0;
+    font-weight: 700;
+}
+
+.current-chatting-room p,
+.current-chatting-room i {
+    color: #8b00ff;
+}
+.content__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logout .btn-nobg {
+    color: #000;
+}
+.content__body {
+    flex: 1 1 auto;
+    margin-top: 10px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.message {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+    transform: scale(0);
+    transform-origin: right;
+    animation-name: showIn;
+    animation-duration: 0.2s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-timing-function: cubic-bezier(0.88, 0.19, 0.37, 1.11);
+    animation-fill-mode: both;
+    animation-delay: 0.2s;
+}
+@keyframes showIn {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.message__content {
+    background-color: #4462ff;
+    color: #fff;
+    padding: 15px;
+    border-radius: 10px 10px 0 10px;
+    max-width: 50%;
+    min-width: 215px;
+    word-wrap: break-word;
+}
+
+.message.me a {
+    color: #fff;
+}
+
+.message__content .chat__meta {
+    justify-content: space-between;
+    display: flex;
+    margin-top: 10px;
+}
+.message__content .chat__meta span {
+    font-size: 14px;
+    color: #e0dfdf;
+    user-select: none;
+}
+.chat__msg {
+    user-select: none;
+}
+
+.message.other {
+    flex-direction: row-reverse;
+    transform-origin: left;
+}
+.message.other .message__content {
+    background-color: #fff;
+    color: #000;
+    border-radius: 10px 10px 10px 0;
+    max-width: 50%;
+}
+
+.message__avatar {
+    margin-left: 20px;
+}
+
+.sb-avatar__text div {
+    font-size: 18px !important;
+}
+
+.message.other .message__avatar {
+    margin-left: 0px;
+}
+.message.other {
+    margin-right: 20px;
+    margin-left: 0px;
+}
+.message.other .message__content .chat__meta span {
+    color: #d1d1d1;
+}
+.content__footer {
+    padding-top: 30px;
+}
+.sendNewMessage {
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 8px;
+}
+.sendNewMessage button {
+    width: 36px;
+    height: 36px;
+    background-color: #ecefff;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #4665ff;
+    padding: 0;
+    border-radius: 5px;
+    line-height: 36px;
+    transition: all 0.3s cubic-bezier(0.88, 0.19, 0.37, 1.11);
+}
+.sendNewMessage button:hover {
+    transform: scale(1.2);
+}
+.sendNewMessage button i {
+    display: block;
+}
+.sendNewMessage input {
+    flex-grow: 1;
+    padding: 0 15px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+#sendMsgBtn {
+    background-color: #3b5bfe;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .main__chatcontent {
+        padding: 0;
+        max-width: 100%;
+        height: calc(100vh - 40px);
+    }
+}
+
+/*burger*/
+
+.burger-btn {
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.burger-btn span {
+    position: absolute;
+    background-color: #8b00ff;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    top: 9px;
+    transition: all 0.3s ease 0s;
+}
+
+.burger-btn::before,
+.burger-btn::after {
+    content: "";
+    background-color: #8b00ff;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0;
+    transition: all 0.3s ease 0s;
+}
+
+.burger-btn::before {
+    top: 0;
+}
+
+.burger-btn::after {
+    bottom: 0;
+}
+
+.burger-btn.active span {
+    transform: scale(0);
+}
+
+.burger-btn.active::before {
+    transform: rotate(45deg);
+    top: 9px;
+}
+
+.burger-btn.active::after {
+    transform: rotate(-45deg);
+    bottom: 9px;
+}
+
+@media (min-width: 769px) {
+    .burger-btn {
+        display: none;
+    }
+}

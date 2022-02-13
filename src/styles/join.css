@@ -1,0 +1,66 @@
+.main__join {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f4f3f8;
+    margin: auto;
+    margin-top: 20%;
+    max-width: 480px;
+    border-radius: 10px;
+    gap: 20px;
+    padding: 25px;
+    align-self: center;
+}
+
+.main__join p {
+    color: #8b00ff;
+    margin: 0;
+    font-weight: 700;
+    font-size: 26px;
+    padding: 0 10px 10px 10px;
+}
+
+.main__join input {
+    font-size: 16px;
+    padding: 15px;
+    background-color: white;
+    border: none;
+    outline: none;
+    width: 80%;
+}
+
+.main__join button {
+    padding: 0 15px;
+    background-color: #ecefff;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 16px;
+    background-color: #3b5bfe;
+    color: #fefeff;
+    font-weight: 700;
+    font-size: 14px;
+    width: 88%;
+    border-radius: 5px;
+    line-height: 36px;
+}
+
+.main__join .error {
+    font-weight: 700;
+    color: red;
+    bottom: 10px;
+}
+
+@media (max-width: 480px) {
+    .main__join {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 0;
+        padding: 0;
+    }
+}
